@@ -1,0 +1,332 @@
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Table to document API endpoints -->
+<table class="table table-dark table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Method</th> <!-- HTTP method (GET, POST, PATCH, DELETE) -->
+      <th>Url</th> <!-- API endpoint URL -->
+      <th>Params/Body/query</th> <!-- Parameters, request body, or query -->
+      <th>Return</th> <!-- Expected response or error -->
+    </tr>
+  </thead>
+<!-- GET Requests (Color-coded with table-info) -->
+  <tbody class="table-info">
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/manager/products</td>
+      <td>token auth</td>
+      <td>Products { } or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/profile</td>
+      <td>token auth</td>
+      <td>user { } or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/categories</td>
+      <td>token auth</td>
+      <td>Categories or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/category/:id</td>
+      <td>token auth</td>
+      <td>Category { } or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/subcategories</td>
+      <td>token auth</td>
+      <td>Subcategories or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/subcategory/:id</td>
+      <td>token auth</td>
+      <td>Subcategory { } or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/products</td>
+      <td>token auth</td>
+      <td>Products or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/user/product/:id</td>
+      <td>token auth</td>
+      <td>Product { } or error</td>
+    </tr>
+
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/castomer/wishlist</td>
+      <td>token auth</td>
+      <td>Wishlist { } or error</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>http://localhost:8080/castomer/card</td>
+      <td>token auth</td>
+      <td>Card { } or error</td>
+    </tr>
+  </tbody>
+<!-- POST Requests (Color-coded with table-success) -->  
+  <tbody class="table-success">
+    <tr>
+      <td>POST</td>
+      <td>http://localhost:8080/register</td>
+      <td>
+        <pre>
+  {
+      "name":"anna",
+      "surname":"anyan",
+      "email":"a@gmail.com"
+      "password":"1111"
+  }
+        </pre> 
+      </td>
+      <td>user { }</td>
+    </tr>
+
+    <tr>
+      <td>POST</td>
+      <td>http://localhost:8080/login</td>
+      <td>
+        <pre>
+  {
+    "username":"a@gmail.com"
+    "password":"1111"
+  }
+        </pre> 
+      </td>
+      <td>post { }</td>
+    </tr>
+
+    <tr>
+      <td>POST</td>
+      <td>http://localhost:8080/admin/categories</td>
+      <td>
+        <pre>
+  {
+      "name":"Category1",
+      "image":"filename"
+  }
+        </pre> 
+      </td>
+      <td>Category { }</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>http://localhost:8080/admin/subcategories</td>
+      <td>
+        <pre>
+  {
+      "name":"Subcategory1",
+      "categoryId":"2"
+  }
+        </pre> 
+      </td>
+      <td>Subcategory { }</td>
+    </tr>
+
+    <tr>
+      <td>POST</td>
+      <td>http://localhost:8080/manager/products</td>
+      <td>
+        <pre>
+  {
+      "name":"Product1",
+      "description":"",
+      "price":"2000"
+      "count":"10"
+      "subcategoryId": "2"
+  }
+        </pre> 
+      </td>
+      <td>Product { }</td>
+    </tr>
+  </tbody>
+<!-- PATCH Requests (Color-coded with table-warning) -->
+  <tbody class="table-warning">
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/admin/categories/:id</td>
+      <td>
+        <pre>
+  {
+      "name":"Category2",
+      "image":"filename"
+  }
+        </pre> 
+      </td>
+      <td>Category { } or error</td>
+    </tr>
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/admin/subcategories/:id</td>
+      <td>
+        <pre>
+  {
+        "name":"Subcategory2"
+        "categoryId":"2"
+  }
+        </pre> 
+      </td>
+      <td>Subcategory { } or error</td>
+    </tr>
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/admin/blockUser/:id</td>
+      <td>
+        <pre>
+  {
+            "id":"2"
+  }
+        </pre>
+      </td>
+      <td>Message or error</td>
+    </tr>
+
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/manager/product/:id</td>
+      <td>
+        <pre>
+  {
+        "name":"Product2",
+        "description":"",
+        "price":"1000"
+        "count":"12"
+        "subcategoryId": "3"
+  }
+        </pre>
+      </td>
+      <td>Product { } or error</td>
+    </tr>
+
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/manager/product/addimage/:id</td>
+      <td>
+        <pre>
+  {
+        "image":"filename",
+  }
+        </pre>
+      </td>
+      <td>massege or error</td>
+    </tr>
+
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/manager/productImage/:id</td>
+      <td>
+        <pre>
+  {
+        "image":"filename",
+  }
+        </pre> 
+      </td>
+      <td>message or error</td>
+    </tr>
+
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/user</td>
+      <td>
+        <pre>
+  {
+          "name":"Anna",
+          "surname":"Anyan"
+  }
+        </pre> 
+      </td>
+      <td>message , user { } or error</td>
+    </tr>
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/user/password</td>
+      <td>
+        <pre>
+  {
+        "password":"123456",
+  }
+        </pre>    
+      </td>
+      <td>message , user { } or error</td>
+    </tr>
+    <tr>
+      <td>PATCH</td>
+      <td>http://localhost:8080/user/image</td>
+      <td>
+        <pre>
+  {
+          "image":"filename",
+  }
+        </pre>
+      </td>
+      <td>message , user { } or error</td>
+    </tr>
+  </tbody>
+<!-- DELETE Requests (Color-coded with table-danger) -->
+  <tbody class="table-danger">
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/admin/categories/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/admin/subcategories/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/admin/user/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/manager/product/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/manager/productImage/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/castomer/wishlist/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/castomer/card/:id</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>http://localhost:8080/user</td>
+      <td></td>
+      <td>true or false</td>
+    </tr>
+  </tbody>
+</table>
