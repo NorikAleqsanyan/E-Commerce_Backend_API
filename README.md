@@ -42,4 +42,4 @@ This is a backend API for an e-commerce platform built with Node.js and Express.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone  https://github.com/NorikAleqsanyan/secure-class.git
